@@ -53,9 +53,9 @@
 
 2.  **Database Configuration**
     The app automatically sets up the database schema on the first run. By default, it looks for:
-    *   **URL:** `jdbc:mysql://localhost:3306/donordb`
+    *   **URL:** `jdbc:mysql://localhost:3306/<your-db-name>`
     *   **User:** `root`
-    *   **Password:** `Sanjaysan3556@`
+    *   **Password:** `<your-password>`
     
     *To change this, edit `src/main/java/com/donorflow/config/DBClass.java` or use Environment Variables.*
 
