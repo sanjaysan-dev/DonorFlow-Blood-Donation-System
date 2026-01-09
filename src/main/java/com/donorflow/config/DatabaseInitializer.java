@@ -69,6 +69,15 @@ DatabaseInitializer implements ServletContextListener {
                 System.out.println("✓ Stock table seeded.");
             }
 
+            // 5. Create Default Admin User
+            String checkAdmin = "SELECT * FROM users WHERE email = 'admin@donorflow.com'";
+            if (!stmt.executeQuery(checkAdmin).next()) {
+                String createAdmin = "INSERT INTO users (full_name, email, password, role) VALUES " +
+                        "('Admin', 'admin@donorflow.com', 'password', 'ADMIN')";
+                stmt.executeUpdate(createAdmin);
+                System.out.println("✓ Default Admin user created.");
+            }
+
         } catch (Exception e) {
             e.printStackTrace(); // Check Render logs if this fails
         }
